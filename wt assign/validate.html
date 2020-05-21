@@ -1,0 +1,41 @@
+<html>
+<head>
+<title></title>
+<script type="text/javascript">
+function validate(){
+var uname=document.getElementById("uid");
+var password=document.getElementById("pwd");
+  if(uname.value.trim()=="")
+  {
+	uname.style.border="solid 3px red";
+	document.getElementById("ulab").style.visibility="visible";
+	return false;
+   }
+	else if(password.value.trim()=="")
+	{
+	 password.style.border="solid 3px blue";
+	 document.getElementById("plab").style.visibility="visible";
+	 return false;
+	}
+	else if(password.value.trim().length<8)
+	{
+	 password.style.border="solid 3px green";
+	 document.getElementById("plab1").style.visibility="visible";
+	 return false;
+	}
+}
+</script>
+</head>
+<body>
+<form onsubmit="return validate();" action="message.html">
+<input type="text" id="uid" placeholder="Enter User Id"/>
+<label id="ulab" style="color:red; visibility:hidden;">Invalid</label>
+<br/>
+<input type="password" id="pwd" placeholder="Enter Password"/>
+<label id="plab" style="color:blue; visibility:hidden;">Blank Password</label>
+<label id="plab1" style="color:green; visibility:hidden;">Password Too Short</label>
+<br/>
+<button type="submit">submit</button>
+</form>
+</body>
+</html>
